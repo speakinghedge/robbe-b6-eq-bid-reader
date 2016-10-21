@@ -39,6 +39,11 @@ class B6EqBidData(object):
         """return electric charge - milli Ampere hours"""
         return self._charge
 
+    @property
+    def time(self):
+        """return timestamp the message was parsed"""
+        return self._charge
+
     def __str__(self):
         return json.dumps(self.__dict__,
                           sort_keys=True, indent=4, separators=(',', ': '))
