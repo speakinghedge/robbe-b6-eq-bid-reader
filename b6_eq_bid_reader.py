@@ -58,13 +58,15 @@ class B6EqBidReader(object):
 
     the message format (as far as I was able to decode):
 
-        \x0c LEN U_IN I_IN U_OUT I_OUT
+        \x0c LEN U_IN I_IN U_OUT I_OUT UNKNOWN_FIXED CHK_SUM?
         LEN : ASCII coded, fixed 64 byte message length
         U_IN : hex ASCII coded UINT16 milli Volt
         I_IN : hex ASCII coded UINT16 milli Ampere
         U_OUT : hex ASCII coded UINT16 milli Volt
         I_OUT : hex ASCII coded UINT16 milli Ampere
         P_OUT: hex ASCII coded UINT16 milli Ampere hours
+        UNKNOWN_FIXED: 000001000000000000000000000000000
+        CHK_SUM: 3 digit hex num, ASCII encoded (not sure about that)
 
     example:
 
